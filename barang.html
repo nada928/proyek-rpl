@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Barang</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+    <meta charset="UTF-8">
+    <title>Data Barang</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        if (localStorage.getItem("login") !== "true") {
+            alert("Silakan login sebagai admin");
+            window.location.href = "login.html";
+        }
+    </script>
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html">Beranda</a>
+    <a href="profil.html">Profil</a>
+    <a href="barang.html">Data Barang</a>
+    <a href="kontak.html">Kontak</a>
+</nav>
+
+<section>
+    <h2>Data Barang</h2>
+
+    <h3>Tambah Data Barang</h3>
+
+    <input type="text" id="nama" placeholder="Nama Barang">
+    
+    <!-- KHUSUS LAMPU -->
+    <div id="opsiLampu">
+        <select id="merek" onchange="ubahWatt()">
+            <option value="">Pilih Merek (Lampu)</option>
+            <option value="Philips">Philips</option>
+            <option value="Osram">Osram</option>
+            <option value="Panasonic">Panasonic</option>
+        </select>
+    
+        <select id="watt">
+            <option value="">Pilih Watt</option>
+        </select>
+    </div>
+    
+    <input type="number" id="harga" placeholder="Harga">
+    <input type="number" id="stok" placeholder="Stok">
+    
+    <button onclick="tambahBarang()">Tambah</button>
+    <button onclick="exportExcel()">Export Excel</button>
+    
+
+
+    <table id="tabelBarang">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Nama Barang</th>
+                <th>Watt</th>
+                <th>Harga</th>
+                <th>Stok</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody id="dataBarang">
+            <!-- data dari JS -->
+        </tbody>
+    </table>
+    
+
+</section>
+
+<script src="data.js"></script>
+<script src="transisi.js"></script>
+<div class="step-nav">
+    <a href="profil.html">Back</a>
+    <a href="kontak.html">Next</a>
+</div>
+<script src="data.js"></script>
+<script src="export.js"></script>
+<script src="excel.js"></script>
+<a href="https://wa.me/6282123365322" 
+   class="wa-float" 
+   target="_blank"
+   title="Chat WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+         alt="WhatsApp">
+</a>
+
+</body>
+</html>
